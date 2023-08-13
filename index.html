@@ -4,11 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>My test page</title>
+    <style>
+      
+    </style>
   </head>
   <body>
     <p>This is my page</p>
     <p>There are many like it,
       but this one is mine.
     </p>
+    <div id="out">out</div>
+    <script>
+      let output = document.querySelector("#out");
+      output.textContent = "js works";
+    </script>
   </body>
 </html>
