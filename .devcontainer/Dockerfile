@@ -1,3 +1,3 @@
-FROM mcr.microsoft.com/devcontainers/javascript-node
+FROM mcr.microsoft.com/devcontainers/universal
 
 RUN npm install -g live-server
