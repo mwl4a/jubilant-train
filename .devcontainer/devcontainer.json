@@ -9,5 +9,12 @@
         "label": "Site",
         "onAutoForward": "openPreview"
       }
+    },
+    "customizations": {
+      "codespaces": {
+        "openFiles": [
+          "index.html"
+        ]
+      }
     }
   }
