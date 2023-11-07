@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guess The Number</title>
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    <input id="guess" type="number" value="0" />
+    <button id="submit" type="button">
+      submit
+    </button>
+    <div id="out">out</div>
+    <script>
+      // Output
+      let output = document.querySelector("#out");
+      function appendOutput(lineOfText) {
+        let textNode = document.createTextNode(lineOfText);
+        let lineBreak = document.createElement("br");
+        output.appendChild(textNode);
+        output.appendChild(lineBreak);
+      }
+      function clearOutput() {
+        output.replaceChildren();
+      }
+      function replaceOutput(newOutput) {
+        clearOutput();
+        appendOutput(newOutput);
+      }
+
+      // Input
+      let guessInput = document.querySelector("#guess");
+      function getGuessValue() {
+        let valueString = guessInput.value;
+        let valueNumber = Number(valueString);
+        return valueNumber;
+      }
+      function setGuessValue(newValue) {
+        guessInput.value = newValue;
+      }
+
+      // Button
+      let submitButton = document.querySelector("#submit");
+      let EVENT_CLICK = "click";
+      submitButton.addEventListener(
+        EVENT_CLICK,
+        submitClickHandler
+      );
+
+      // Game
+      let secretNumber = 0;
+      function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min); 
+        // The maximum is inclusive and the minimum is inclusive
+      }
+      function resetGame() {
+        secretNumber = getRandomIntInclusive(0, 10);
+        replaceOutput("I'm thinking of a number between 0 and 10.");
+      }
+
+
+      function submitClickHandler(event) {
+        // This is what happens when the button is clicked
+        let guessedNumber = getGuessValue();
+        if (guessedNumber === secretNumber) {
+          appendOutput("You guessed it!");
+        } else {
+          appendOutput("That's not it.");
+        }
+      }
+
+      resetGame();
+    </script>
+  </body>
+</html>
