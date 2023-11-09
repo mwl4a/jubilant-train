@@ -17,3 +17,5 @@ You can see your changes here.
 
 When you're ready to publish your changes, write a sentence describing your change in the Message field and click the "+" next to each file. Then click "Commit".
 
+The "Commit" button will change to a sync icon with an up arrow.
+Click this to publish your changes.
